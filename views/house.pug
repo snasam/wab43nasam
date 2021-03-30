@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to pug by shital nasam#{title}
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let house = [
+                    {
+                        "type": "1BHK",
+                        "colour": "white",
+                        "rent": 600
+                    },
+                    {
+                        "type": "2BHK",
+                        "colour": "brown",
+                        "rent": 500
+                    },
+                    {
+                        "type": "duplex",
+                        "colour": "grey",
+                        "rent": 1000
+                    },                    
+                ]
+            each list in house
+                div(class="col-sm-2") #{list.type}
+                div(class="col-sm-2") #{list.colour}
+                div(class="col-sm-2") #{list.rent}
