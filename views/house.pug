@@ -23,9 +23,14 @@ block content
                         "rent": 1000
                     },                    
                 ]
-            each list in house
-                div(class="col-sm-2") #{list.type}
-                div(class="col-sm-2") #{list.colour}
-                div(class="col-sm-2") #{list.rent}
+            each list,index in house
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.type}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.colour}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.rent}
                  
-       
+        script.
+     
+             function buy(itemNo)
+             {
+             alert(`You purchased Item ${itemNo+1}`)
+             }
